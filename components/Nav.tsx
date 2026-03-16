@@ -69,7 +69,7 @@ export default function Nav() {
                 <Link
                   key={href}
                   href={href}
-                  style={{ fontFamily: 'Bosch, sans-serif' }}
+                  style={{ fontFamily: 'SpecialElite, serif', fontWeight: 700 }}
                   className={`text-[14px] tracking-[0.08em] transition-colors duration-200 ${
                     isActive ? 'text-[#FFE234]' : 'text-[#f0ede8]/60 hover:text-[#FFE234]'
                   }`}
