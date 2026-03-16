@@ -1,27 +1,6 @@
 import type { Metadata } from 'next'
-import { Cormorant_Garamond, Inter, Silkscreen } from 'next/font/google'
 import './globals.css'
 import Nav from '@/components/Nav'
-
-const cormorant = Cormorant_Garamond({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600'],
-  variable: '--font-cormorant',
-  display: 'swap',
-})
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-})
-
-const silkscreen = Silkscreen({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-  variable: '--font-silkscreen',
-  display: 'swap',
-})
 
 export const metadata: Metadata = {
   title: {
@@ -65,7 +44,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${inter.variable} ${silkscreen.variable} scroll-smooth`}>
+    <html lang="en" className="scroll-smooth">
       <body className="bg-[#675d52] text-white font-sans font-bold antialiased">
         <Nav />
         <main>{children}</main>

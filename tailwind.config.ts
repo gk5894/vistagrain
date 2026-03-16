@@ -14,17 +14,18 @@ const config: Config = {
         accent: '#c8a96e',
       },
       fontFamily: {
-        serif: ['var(--font-cormorant)', 'Georgia', 'serif'],
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        serif: ['Kenoky', 'sans-serif'],
+        sans: ['Kenoky', 'sans-serif'],
       },
       typography: {
         DEFAULT: {
           css: {
-            color: '#f5f5f0',
-            a: { color: '#c8a96e' },
-            h1: { fontFamily: 'var(--font-cormorant)' },
-            h2: { fontFamily: 'var(--font-cormorant)' },
-            h3: { fontFamily: 'var(--font-cormorant)' },
+            color: '#ffffff',
+            fontFamily: 'Kenoky, sans-serif',
+            a: { color: '#FFE234' },
+            h1: { fontFamily: 'Kenoky, sans-serif' },
+            h2: { fontFamily: 'Kenoky, sans-serif' },
+            h3: { fontFamily: 'Kenoky, sans-serif' },
           },
         },
       },

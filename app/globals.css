@@ -21,6 +21,7 @@
 @layer base {
   * {
     box-sizing: border-box;
+    font-family: 'Kenoky', sans-serif;
   }
 
   ::selection {
