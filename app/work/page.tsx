@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { galleryImages, type Category } from '@/lib/images'
 import Gallery from '@/components/Gallery'
 
-const categories: (Category | 'ALL')[] = ['ALL', 'ASTRO', 'FILM', 'URBAN', 'STREET', 'LANDSCAPES']
+const categories: (Category | 'ALL')[] = ['ALL', 'FILM', 'LANDSCAPES', 'STREET']
 
 export default function WorkPage() {
   const [active, setActive] = useState<Category | 'ALL'>('ALL')
