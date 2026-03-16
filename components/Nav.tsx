@@ -50,12 +50,17 @@ export default function Nav() {
         style={{ transform: visible ? 'translateY(0)' : 'translateY(-100%)' }}
         className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-6 md:px-10 py-5 transition-transform duration-300 ease-in-out"
       >
-        {/* Logo */}
-        <Link
-          href="/"
-          className="text-sm tracking-[0.2em] uppercase text-[#f5f5f0] font-sans font-light"
-        >
-          vistagrain
+        {/* Brand identity */}
+        <Link href="/" className="flex flex-col leading-none group">
+          <span className="font-[family-name:var(--font-silkscreen)] text-sm tracking-[0.15em] uppercase text-[#f5f5f0]">
+            vistagrain
+          </span>
+          <span className="text-[9px] tracking-[0.18em] uppercase text-[#f5f5f0]/45 mt-[3px] font-sans">
+            Light. Color. Memory.
+          </span>
+          <span className="text-[9px] tracking-[0.14em] text-[#f5f5f0]/30 mt-[2px] font-sans">
+            by Gaurav Kshirsagar
+          </span>
         </Link>
 
         {/* Desktop nav */}
