@@ -46,7 +46,7 @@ export default function Nav() {
         className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between transition-transform duration-300 ease-in-out px-4 py-3"
       >
         {/* Inner pill — rounded, semi-translucent background */}
-        <div className="w-full flex items-center justify-between px-5 md:px-8 py-3 rounded-2xl bg-black/40 backdrop-blur-md border border-white/8">
+        <div className="w-full flex items-center justify-between px-5 md:px-8 py-3 rounded-2xl bg-black/40 backdrop-blur-md">
 
           {/* Logo */}
           <Link href="/" className="flex flex-col leading-none">
