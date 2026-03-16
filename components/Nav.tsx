@@ -52,13 +52,13 @@ export default function Nav() {
       >
         {/* Brand identity */}
         <Link href="/" className="flex flex-col leading-none group">
-          <span className="font-[family-name:var(--font-silkscreen)] text-sm tracking-[0.15em] uppercase text-[#f5f5f0]">
+          <span className="text-xl tracking-[0.12em] uppercase text-[#f5f5f0]" style={{ fontFamily: 'Kenoky, sans-serif' }}>
             vistagrain
           </span>
-          <span className="text-[9px] tracking-[0.18em] uppercase text-[#f5f5f0]/45 mt-[3px] font-sans">
+          <span className="text-[10px] tracking-[0.18em] uppercase text-[#f5f5f0]/45 mt-1" style={{ fontFamily: 'Kenoky, sans-serif' }}>
             Light. Color. Memory.
           </span>
-          <span className="text-[9px] tracking-[0.14em] text-[#f5f5f0]/30 mt-[2px] font-sans">
+          <span className="text-[10px] tracking-[0.14em] text-[#f5f5f0]/30 mt-[3px]" style={{ fontFamily: 'Kenoky, sans-serif' }}>
             by Gaurav Kshirsagar
           </span>
         </Link>
