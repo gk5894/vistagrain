@@ -51,12 +51,12 @@ export default function Nav() {
           {/* Logo */}
           <Link href="/" className="flex flex-col leading-none">
             <span
-              className="text-[15px] tracking-normal text-[#f0ede8]"
+              className="text-[22px] tracking-normal text-[#f0ede8]"
               style={{ fontFamily: 'Gloock, serif' }}
             >
               Vistagrain
             </span>
-            <span className="font-sans text-[8px] tracking-[0.12em] text-[#f0ede8]/35 mt-[3px]">
+            <span className="font-sans text-[11px] tracking-[0.12em] text-[#f0ede8]/35 mt-[3px]">
               by Gaurav Kshirsagar
             </span>
           </Link>
@@ -70,7 +70,7 @@ export default function Nav() {
                   key={href}
                   href={href}
                   style={{ fontFamily: 'Bosch, sans-serif' }}
-                  className={`text-[11px] tracking-[0.15em] transition-colors duration-200 ${
+                  className={`text-[14px] tracking-[0.08em] transition-colors duration-200 ${
                     isActive ? 'text-[#FFE234]' : 'text-[#f0ede8]/60 hover:text-[#FFE234]'
                   }`}
                 >
