@@ -66,7 +66,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${cormorant.variable} ${inter.variable} ${silkscreen.variable} scroll-smooth`}>
-      <body className="bg-[#0e0e0e] text-[#f5f5f0] font-sans antialiased">
+      <body className="bg-[#675d52] text-white font-sans font-bold antialiased">
         <Nav />
         <main>{children}</main>
       </body>
