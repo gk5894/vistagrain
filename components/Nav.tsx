@@ -51,7 +51,7 @@ export default function Nav() {
           {/* Logo */}
           <Link href="/" className="flex flex-col leading-none">
             <span
-              className="text-[14px] tracking-[0.25em] text-[#f0ede8]"
+              className="text-[15px] tracking-normal text-[#f0ede8]"
               style={{ fontFamily: 'Gloock, serif' }}
             >
               Vistagrain
