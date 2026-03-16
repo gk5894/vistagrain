@@ -204,7 +204,7 @@ export default function HeroScene({ imageSrc, imageWidth, imageHeight }: HeroSce
       animate()
 
       // Cleanup stored for return
-      ;(canvas as any).__cleanup = () => {
+      ;(canvas as unknown as { __cleanup: () => void }).__cleanup = () => {
         window.removeEventListener('mousemove', handleMouseMove)
         window.removeEventListener('resize', handleResize)
         cancelAnimationFrame(animId)
@@ -218,7 +218,7 @@ export default function HeroScene({ imageSrc, imageWidth, imageHeight }: HeroSce
     return () => {
       mounted = false
       cancelAnimationFrame(animId)
-      ;(canvas as any).__cleanup?.()
+      ;(canvas as unknown as { __cleanup?: () => void }).__cleanup?.()
     }
   }, [imageSrc, imageWidth, imageHeight])
 

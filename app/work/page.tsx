@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef } from 'react'
 import { galleryImages, type Category } from '@/lib/images'
 import Gallery from '@/components/Gallery'
 
