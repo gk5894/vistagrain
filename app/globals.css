@@ -3,14 +3,6 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Coffekan';
-  src: url('/fonts/CoffekanRegular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
   font-family: 'Kenoky';
   src: url('/fonts/KenokyLight.ttf') format('truetype');
   font-weight: 300;
@@ -18,33 +10,66 @@
   font-display: swap;
 }
 
+:root {
+  --color-bg: #0a0a0a;
+  --color-text: #f0ede8;
+  --color-muted: rgba(240, 237, 232, 0.45);
+  --color-accent: #FFE234;
+  --font-serif: var(--font-cormorant), 'Georgia', serif;
+  --font-sans: var(--font-dm-sans), system-ui, sans-serif;
+}
+
 @layer base {
   * {
     box-sizing: border-box;
-    font-family: 'Kenoky', sans-serif;
+  }
+
+  html {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+  }
+
+  body {
+    font-family: var(--font-sans);
   }
 
   ::selection {
-    background-color: #c8a96e33;
-    color: #f5f5f0;
+    background-color: rgba(255, 226, 52, 0.2);
+    color: #f0ede8;
   }
 
   ::-webkit-scrollbar {
-    width: 4px;
+    width: 3px;
   }
 
   ::-webkit-scrollbar-track {
-    background: #1c1209;
+    background: #0a0a0a;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #333;
+    background: #2a2a2a;
     border-radius: 2px;
+  }
+
+  /* Fade-in animation class toggled by IntersectionObserver */
+  .img-reveal {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  .img-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.75s ease, transform 0.75s ease;
   }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .font-brand {
+    font-family: 'Kenoky', var(--font-sans);
   }
 }

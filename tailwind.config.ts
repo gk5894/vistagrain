@@ -9,23 +9,28 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: '#0e0e0e',
-        foreground: '#f5f5f0',
-        accent: '#c8a96e',
+        background: '#0a0a0a',
+        foreground: '#f0ede8',
+        accent: '#FFE234',
+        muted: 'rgba(240,237,232,0.45)',
       },
       fontFamily: {
-        serif: ['Kenoky', 'sans-serif'],
-        sans: ['Kenoky', 'sans-serif'],
+        serif: ['var(--font-cormorant)', 'Georgia', 'serif'],
+        sans: ['var(--font-dm-sans)', 'system-ui', 'sans-serif'],
+        brand: ['Kenoky', 'var(--font-dm-sans)', 'sans-serif'],
       },
       typography: {
         DEFAULT: {
           css: {
-            color: '#ffffff',
-            fontFamily: 'Kenoky, sans-serif',
-            a: { color: '#FFE234' },
-            h1: { fontFamily: 'Kenoky, sans-serif' },
-            h2: { fontFamily: 'Kenoky, sans-serif' },
-            h3: { fontFamily: 'Kenoky, sans-serif' },
+            color: '#f0ede8',
+            fontFamily: 'var(--font-dm-sans), system-ui, sans-serif',
+            a: { color: '#FFE234', textDecoration: 'none' },
+            'a:hover': { color: '#FFE234', textDecoration: 'underline' },
+            h1: { fontFamily: 'var(--font-cormorant), Georgia, serif', fontWeight: '400' },
+            h2: { fontFamily: 'var(--font-cormorant), Georgia, serif', fontWeight: '400' },
+            h3: { fontFamily: 'var(--font-cormorant), Georgia, serif', fontWeight: '400' },
+            strong: { color: '#f0ede8' },
+            blockquote: { borderLeftColor: '#FFE234', color: 'rgba(240,237,232,0.7)' },
           },
         },
       },

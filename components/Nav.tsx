@@ -22,20 +22,15 @@ export default function Nav() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY
-
       if (currentScrollY === 0) {
         setVisible(true)
       } else if (currentScrollY < lastScrollY.current) {
-        // Scrolling up
         setVisible(true)
       } else if (currentScrollY > lastScrollY.current) {
-        // Scrolling down
         setVisible(false)
       }
-
       lastScrollY.current = currentScrollY
     }
-
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -50,29 +45,26 @@ export default function Nav() {
         style={{ transform: visible ? 'translateY(0)' : 'translateY(-100%)' }}
         className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-6 md:px-10 py-5 transition-transform duration-300 ease-in-out"
       >
-        {/* Brand identity */}
-        <Link href="/" className="flex flex-col leading-none group">
-          <span className="text-xl tracking-[0.12em] uppercase text-[#f5f5f0]" style={{ fontFamily: 'Kenoky, sans-serif' }}>
-            vistagrain
+        {/* Logo */}
+        <Link href="/" className="flex flex-col leading-none">
+          <span className="font-serif text-[13px] tracking-[0.3em] uppercase text-[#f0ede8] font-light">
+            Vistagrain
           </span>
-          <span className="text-[10px] tracking-[0.18em] uppercase text-[#f5f5f0]/45 mt-1" style={{ fontFamily: 'Kenoky, sans-serif' }}>
-            Light. Color. Memory.
-          </span>
-          <span className="text-[10px] tracking-[0.14em] text-[#f5f5f0]/30 mt-[3px]" style={{ fontFamily: 'Kenoky, sans-serif' }}>
+          <span className="font-sans text-[9px] tracking-[0.12em] text-[#f0ede8]/35 mt-[3px] font-light">
             by Gaurav Kshirsagar
           </span>
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
           {navLinks.map(({ href, label }) => {
             const isActive = pathname === href
             return (
               <Link
                 key={href}
                 href={href}
-                className={`text-[11px] tracking-[0.15em] uppercase font-sans transition-colors duration-200 ${
-                  isActive ? 'text-[#FFE234]' : 'text-[#f5f5f0]/70 hover:text-[#FFE234]'
+                className={`font-sans text-[11px] tracking-[0.15em] uppercase transition-colors duration-200 ${
+                  isActive ? 'text-[#FFE234]' : 'text-[#f0ede8]/55 hover:text-[#FFE234]'
                 }`}
               >
                 {label}
@@ -84,12 +76,12 @@ export default function Nav() {
         {/* Mobile hamburger */}
         <button
           onClick={() => setMobileOpen(true)}
-          className="md:hidden flex flex-col gap-1.5 p-1"
-          aria-label="Open menu"
+          className="md:hidden flex flex-col gap-[5px] p-1"
+          aria-label="Open navigation menu"
         >
-          <span className="block w-6 h-px bg-[#f5f5f0]" />
-          <span className="block w-4 h-px bg-[#f5f5f0]" />
-          <span className="block w-6 h-px bg-[#f5f5f0]" />
+          <span className="block w-5 h-px bg-[#f0ede8]" />
+          <span className="block w-3 h-px bg-[#f0ede8]" />
+          <span className="block w-5 h-px bg-[#f0ede8]" />
         </button>
       </header>
 

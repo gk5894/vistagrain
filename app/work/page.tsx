@@ -1,7 +1,6 @@
 'use client'
 
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useState, useRef, useEffect } from 'react'
 import { galleryImages, type Category } from '@/lib/images'
 import Gallery from '@/components/Gallery'
 
@@ -9,45 +8,55 @@ const categories: (Category | 'ALL')[] = ['ALL', 'FILM', 'LANDSCAPES', 'STREET']
 
 export default function WorkPage() {
   const [active, setActive] = useState<Category | 'ALL'>('ALL')
+  const [fading, setFading] = useState(false)
+  const prevActive = useRef(active)
 
-  const filtered = active === 'ALL' ? galleryImages : galleryImages.filter((img) => img.category === active)
+  const filtered = active === 'ALL'
+    ? galleryImages
+    : galleryImages.filter((img) => img.category === active)
+
+  function handleFilter(cat: Category | 'ALL') {
+    if (cat === active) return
+    setFading(true)
+    setTimeout(() => {
+      prevActive.current = cat
+      setActive(cat)
+      setFading(false)
+    }, 200)
+  }
 
   return (
-    <div className="pt-24 px-6 md:px-10 pb-16">
-      <header className="mb-12">
-        <h1 className="font-serif text-4xl md:text-5xl tracking-wide mb-8">Work</h1>
-        <div className="flex flex-wrap gap-6">
+    <div className="pt-24 px-4 md:px-6 pb-16">
+      <header className="mb-10 px-2">
+        <h1 className="font-serif text-4xl md:text-5xl font-light tracking-wide mb-8">Work</h1>
+        <div className="flex flex-wrap gap-7">
           {categories.map((cat) => (
             <button
               key={cat}
-              onClick={() => setActive(cat)}
-              className={`relative text-[11px] tracking-[0.2em] uppercase transition-colors duration-200 pb-px ${
-                active === cat ? 'text-[#f5f5f0]' : 'text-[#f5f5f0]/40 hover:text-[#f5f5f0]/80'
+              onClick={() => handleFilter(cat)}
+              className={`relative font-sans text-[11px] tracking-[0.18em] uppercase transition-colors duration-200 pb-px ${
+                active === cat
+                  ? 'text-[#f0ede8]'
+                  : 'text-[#f0ede8]/40 hover:text-[#f0ede8]/80'
               }`}
             >
               {cat}
               {active === cat && (
-                <motion.span
-                  layoutId="filter-underline"
-                  className="absolute bottom-0 left-0 right-0 h-px bg-[#c8a96e]"
-                />
+                <span className="absolute bottom-0 left-0 right-0 h-px bg-[#FFE234]" />
               )}
             </button>
           ))}
         </div>
       </header>
 
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={active}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.3 }}
-        >
-          <Gallery images={filtered} />
-        </motion.div>
-      </AnimatePresence>
+      <div
+        style={{
+          opacity: fading ? 0 : 1,
+          transition: 'opacity 200ms ease',
+        }}
+      >
+        <Gallery images={filtered} />
+      </div>
     </div>
   )
 }

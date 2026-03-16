@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { motion } from 'framer-motion'
+import { useRef, useEffect } from 'react'
 import type { GalleryImage } from '@/lib/images'
 
 interface ImageCardProps {
@@ -11,13 +11,33 @@ interface ImageCardProps {
 }
 
 export default function ImageCard({ image, onClick, index }: ImageCardProps) {
+  const ref = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+
+    // Stagger delay capped so deep items don't wait forever
+    const delay = Math.min(index * 40, 300)
+    el.style.transitionDelay = `${delay}ms`
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.classList.add('is-visible')
+          observer.unobserve(el)
+        }
+      },
+      { threshold: 0.04, rootMargin: '0px 0px -40px 0px' }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [index])
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-60px' }}
-      transition={{ duration: 0.6, delay: index * 0.05 }}
-      className="group cursor-pointer overflow-hidden"
+    <div
+      ref={ref}
+      className="img-reveal group cursor-pointer"
       onClick={() => onClick(image)}
     >
       <div className="relative overflow-hidden">
@@ -26,17 +46,18 @@ export default function ImageCard({ image, onClick, index }: ImageCardProps) {
           alt={image.alt}
           width={image.width}
           height={image.height}
-          quality={90}
-          className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          quality={85}
+          loading="lazy"
+          className="w-full h-auto object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
-        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors duration-500" />
         {image.caption && (
-          <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/60 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-            <p className="text-[10px] tracking-widest text-[#f5f5f0]/80 uppercase">{image.caption}</p>
+          <div className="absolute bottom-0 left-0 right-0 px-3 py-2 bg-gradient-to-t from-black/50 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-400">
+            <p className="font-sans text-[9px] tracking-[0.18em] text-white/70 uppercase">{image.caption}</p>
           </div>
         )}
       </div>
-    </motion.div>
+    </div>
   )
 }
