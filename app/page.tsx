@@ -34,7 +34,7 @@ export default function HomePage() {
       </section>
 
       {/* Gallery */}
-      <section className="px-4 md:px-8 py-16 lg:py-24">
+      <section className="px-1 py-1">
         <Gallery images={galleryImages} />
       </section>
     </>

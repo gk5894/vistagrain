@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="pt-20 lg:pt-0 min-h-screen">
+    <div className="pt-16 min-h-screen">
       <div className="grid lg:grid-cols-2 min-h-screen">
         {/* Portrait */}
         <div className="relative h-[60vh] lg:h-screen lg:sticky lg:top-0">

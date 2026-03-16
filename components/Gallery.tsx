@@ -26,7 +26,7 @@ export default function Gallery({ images }: GalleryProps) {
 
   return (
     <>
-      <div className="columns-1 sm:columns-2 lg:columns-3 gap-3 space-y-3">
+      <div className="columns-1 sm:columns-2 lg:columns-3 gap-1 space-y-1">
         {images.map((image, index) => (
           <div key={image.id} className="break-inside-avoid">
             <ImageCard

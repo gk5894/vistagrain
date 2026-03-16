@@ -13,7 +13,7 @@ export default function WorkPage() {
   const filtered = active === 'ALL' ? galleryImages : galleryImages.filter((img) => img.category === active)
 
   return (
-    <div className="pt-20 lg:pt-0 px-4 md:px-8 lg:px-12 py-16">
+    <div className="pt-24 px-6 md:px-10 pb-16">
       <header className="mb-12">
         <h1 className="font-serif text-4xl md:text-5xl tracking-wide mb-8">Work</h1>
         <div className="flex flex-wrap gap-6">

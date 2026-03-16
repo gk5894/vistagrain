@@ -68,7 +68,7 @@ export default function RootLayout({
     <html lang="en" className={`${cormorant.variable} ${inter.variable} ${silkscreen.variable} scroll-smooth`}>
       <body className="bg-[#0e0e0e] text-[#f5f5f0] font-sans antialiased">
         <Nav />
-        <main className="lg:pl-56">{children}</main>
+        <main>{children}</main>
       </body>
     </html>
   )
