@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'About',
-  description: 'NYC-based photographer working across astrophotography, film, and street.',
+  description: 'NYC-based photographer capturing light, landscapes, and moments just outside of time.',
 }
 
 export default function AboutPage() {
@@ -25,61 +25,35 @@ export default function AboutPage() {
 
         {/* Bio */}
         <div className="px-8 md:px-12 lg:px-16 py-16 lg:py-24 flex flex-col justify-center">
-          <h1 className="font-serif text-4xl md:text-5xl tracking-wide mb-8">About</h1>
+          <h1
+            className="text-4xl md:text-5xl mb-10 text-[#f0ede8]"
+            style={{ fontFamily: 'Gloock, serif', fontWeight: 400, letterSpacing: '0.01em' }}
+          >
+            About Me
+          </h1>
 
-          <div className="space-y-5 text-[#f5f5f0]/70 leading-relaxed text-sm max-w-lg">
+          <div
+            className="space-y-6 text-[#f0ede8]/80 leading-[1.85] text-[15px] md:text-[16px] max-w-lg"
+            style={{ fontFamily: 'SpecialElite, serif' }}
+          >
+            <p>Hi, my name is Gaurav.</p>
             <p>
-              vistagrain is the work of a New York City-based photographer documenting the boundaries
-              between natural and urban worlds — the Milky Way over Hudson Valley ridgelines, the
-              grain of analog film running through Lower East Side alleyways, the geometry hidden in
-              Bronx brutalism.
+              I photograph what lingers — light that slips through unnoticed, spaces that feel
+              paused, moments that sit just outside of time. Much of the work comes from living in
+              New York, but not all of it. I carry the same instinct wherever I go.
             </p>
             <p>
-              The practice spans astrophotography, analog film, street, and architectural work. Every
-              frame is an attempt to find stillness inside motion — to hold a moment that the eye
-              passes over, the memory keeps.
+              On the streets, I&apos;m drawn to people — brief encounters, passing expressions, the
+              kind of characters you only notice if you&apos;re looking for them. Elsewhere, the
+              focus shifts to vast landscapes, quiet cityscapes, and architectural forms, but the
+              intention stays the same: to capture a feeling rather than a record.
             </p>
             <p>
-              Based in Brooklyn. Available for editorial, commercial, and fine art commissions
-              worldwide.
+              I approach images the way a painter might, shaping light, color, and atmosphere until
+              the scene feels remembered rather than simply seen — influenced by Edward Hopper,
+              Claude Monet, and Jacques-Louis David.
             </p>
-          </div>
-
-          <div className="mt-12 pt-10 border-t border-white/10">
-            <h2 className="text-[10px] tracking-[0.2em] uppercase text-[#f5f5f0]/40 mb-5">
-              Selected Clients &amp; Publications
-            </h2>
-            <ul className="grid grid-cols-2 gap-2 text-sm text-[#f5f5f0]/60">
-              {[
-                'The New York Times',
-                'Aperture Magazine',
-                'National Geographic',
-                'New York Magazine',
-                'Time',
-                'Le Monde',
-                'Vogue Italia',
-                'The Guardian',
-              ].map((client) => (
-                <li key={client} className="text-xs tracking-wide">{client}</li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="mt-10 pt-8 border-t border-white/10 flex gap-6">
-            <a
-              href="mailto:hello@vistagrain.com"
-              className="text-[11px] tracking-[0.15em] uppercase text-[#f5f5f0]/50 hover:text-[#c8a96e] transition-colors"
-            >
-              hello@vistagrain.com
-            </a>
-            <a
-              href="https://instagram.com/vistagrain"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[11px] tracking-[0.15em] uppercase text-[#f5f5f0]/50 hover:text-[#c8a96e] transition-colors"
-            >
-              @vistagrain
-            </a>
+            <p>Vistagrain is where all of it comes together.</p>
           </div>
         </div>
       </div>
