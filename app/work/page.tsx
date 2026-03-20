@@ -4,7 +4,7 @@ import { useState, useRef } from 'react'
 import { galleryImages, type Category } from '@/lib/images'
 import Gallery from '@/components/Gallery'
 
-const categories: (Category | 'ALL')[] = ['ALL', 'FILM', 'LANDSCAPES', 'STREET']
+const categories: (Category | 'ALL')[] = ['ALL', 'FILM', 'LANDSCAPES', 'STREET', 'PEOPLE']
 
 export default function WorkPage() {
   const [active, setActive] = useState<Category | 'ALL'>('ALL')
