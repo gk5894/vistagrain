@@ -64,6 +64,21 @@ export const galleryImages: GalleryImage[] = [
   { id: 49, src: '/images/Landscapes/6402D33E-C93B-42C0-8FF2-72CC9B52D0E5.JPG', width: 3734, height: 3645, category: 'LANDSCAPES', alt: 'Landscape photograph — natural scenery' },
   { id: 50, src: '/images/Landscapes/IMG_6509-1.JPG',              width: 3029, height: 2020, category: 'LANDSCAPES', alt: 'Landscape photograph — wide frame' },
   { id: 51, src: '/images/Landscapes/Photo_1080295426_DJI_2_jpg_2990722_0_202011865212_photo_original.jpg', width: 3731, height: 1376, category: 'LANDSCAPES', alt: 'Aerial landscape photograph — drone photography' },
+  { id: 52, src: '/images/People/6B1A3972.jpg',                     width: 2259, height: 3388, category: 'PEOPLE',     alt: 'Portrait photograph' },
+  { id: 53, src: '/images/People/6B1A4391%20Edited%202.JPG',        width: 6065, height: 4116, category: 'PEOPLE',     alt: 'Portrait photograph' },
+  { id: 54, src: '/images/People/6B1A4528%20Edited%202.JPG',        width: 3193, height: 3282, category: 'PEOPLE',     alt: 'Portrait photograph' },
+  { id: 55, src: '/images/People/6B1A4698%20Edited%202.JPG',        width: 4038, height: 2980, category: 'PEOPLE',     alt: 'Portrait photograph' },
+  { id: 56, src: '/images/People/6B1A4871%20Edited%202.JPG',        width: 3043, height: 4627, category: 'PEOPLE',     alt: 'Portrait photograph' },
+  { id: 57, src: '/images/People/6B1A4932%20Edited%202.jpg',        width: 4626, height: 4480, category: 'PEOPLE',     alt: 'Portrait photograph' },
+  { id: 58, src: '/images/People/6B1A7504%20Edited.JPG',            width: 5600, height: 4480, category: 'PEOPLE',     alt: 'Portrait photograph' },
+  { id: 59, src: '/images/People/Tezza-1159.jpg',                   width: 6720, height: 4480, category: 'PEOPLE',     alt: 'Portrait photograph' },
+  { id: 60, src: '/images/People/Tezza-2208.JPG',                   width: 2987, height: 4480, category: 'PEOPLE',     alt: 'Portrait photograph' },
+  { id: 61, src: '/images/People/Tezza-3536.JPG',                   width: 2319, height: 2976, category: 'PEOPLE',     alt: 'Portrait photograph' },
+  { id: 62, src: '/images/People/Tezza-4812%202.JPG',               width: 4480, height: 6419, category: 'PEOPLE',     alt: 'Portrait photograph' },
+  { id: 63, src: '/images/People/Tezza-6399.JPG',                   width: 2409, height: 3011, category: 'PEOPLE',     alt: 'Portrait photograph' },
+  { id: 64, src: '/images/People/Tezza-7192.JPG',                   width: 4480, height: 6720, category: 'PEOPLE',     alt: 'Portrait photograph' },
+  { id: 65, src: '/images/People/Tezza-9637.JPG',                   width: 5639, height: 4326, category: 'PEOPLE',     alt: 'Portrait photograph' },
+  { id: 66, src: '/images/People/Tezza-9932%202.jpg',               width: 4480, height: 4673, category: 'PEOPLE',     alt: 'Portrait photograph' },
 
   // NOTE: Remaining Street images are HEIC format — not supported in Chrome/Firefox.
   // Convert to JPG and uncomment to enable.
